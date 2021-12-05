@@ -1,26 +1,69 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-<body>
+@extends('layout.ceria')
 
-	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
-	<h3>Data Pegawai</h3>
+<style>
+    .form {
+        background-color: #fff;
+        width: 85%;
+        padding: 10px;
+        margin-top: 2rem;
+        box-shadow: 0 2px 20px rgb(177, 187, 245);
+    }
+    h2 {
+        font-family: 'Droid serif', serif;
+        font-size: 36px; font-weight: 400;
+        line-height: 44px;
+    }
+    </style>
+@section('title', 'Data Pegawai')
+@section('isikonten')
 
-	<a href="/pegawai"> Kembali</a>
+	<h2>Data Pegawai</h2>
 
-	<br/>
-	<br/>
-
-	<form action="/pegawai/store" method="post">
+	<form class="form form-horizontal" action="/pegawai/store" method="post">
 		{{ csrf_field() }}
-		Nama <input type="text" name="nama" required="required"> <br/>
-		Jabatan <input type="text" name="jabatan" required="required"> <br/>
-		Umur <input type="number" name="umur" required="required"> <br/>
-		Alamat <textarea name="alamat" required="required"></textarea> <br/>
-		<input type="submit" value="Simpan Data">
-	</form>
+        <div class="form-body">
+            <div class="row">
 
-</body>
-</html>
+                <div class="col-md-4" style="margin-top: 1rem; margin-bottom:1rem">
+                    <label>Nama</label>
+                </div>
+                <div class="col-md-8 form-group" style="margin-top: 1rem; margin-bottom:1rem">
+                    <input type="text" name="Nama" required="required">
+                </div>
+
+                <div class="col-md-4" style="margin-top: 1rem; margin-bottom:1rem">
+                    <label>Jabatan</label>
+                </div>
+                <div class="col-md-8 form-group" style="margin-top: 1rem; margin-bottom:1rem">
+                    <input type="text" name="Jabatan" required="required">
+                </div>
+
+                <div class="col-md-4" style="margin-top: 1rem; margin-bottom:1rem">
+                    <label>Umur</label>
+                </div>
+                <div class="col-md-8 form-group" style="margin-top: 1rem; margin-bottom:1rem">
+                    <input type="text" name="Umur" required="required">
+                </div>
+
+                <div class="col-md-4" style="margin-top: 1rem; margin-bottom:1rem">
+                    <label>Alamat</label>
+                </div>
+                <div class="col-md-8 form-group" style="margin-top: 1rem; margin-bottom:1rem">
+                    <textarea name="Alamat" required="required"></textarea>
+                </div>
+            </div>
+
+            <div class="row mb-3" style="margin-top: 1rem; margin-bottom:1rem">
+              <div class="col-sm-6">
+                      <button type="reset" id="reset" value="reset" class="btn btn-warning">
+                        <a href="/pegawai"> Kembali</a>
+                      </button>
+              </div>
+              <div class="col-sm-6">
+                <button type="submit" id="submit" value="Simpan Data" class="btn btn-primary">Kirim</button>
+            </div>
+            </div>
+
+    </div>
+        </form>
+@endsection

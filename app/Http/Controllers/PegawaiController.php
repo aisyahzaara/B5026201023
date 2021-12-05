@@ -26,10 +26,10 @@ class PegawaiController extends Controller
     {
 	// insert data ke table pegawai
 	DB::table('pegawai')->insert([
-		'pegawai_nama' => $request->nama,
-		'pegawai_jabatan' => $request->jabatan,
-		'pegawai_umur' => $request->umur,
-		'pegawai_alamat' => $request->alamat
+		'pegawai_nama' => $request->Nama,
+		'pegawai_jabatan' => $request->Jabatan,
+		'pegawai_umur' => $request->Umur,
+		'pegawai_alamat' => $request->Alamat
 	]);
 	// alihkan halaman ke halaman pegawai
 	return redirect('/pegawai');
@@ -56,10 +56,10 @@ class PegawaiController extends Controller
     {
 	// update data pegawai
 	DB::table('pegawai')->where('pegawai_id',$request->id)->update([
-		'pegawai_nama' => $request->nama,
-		'pegawai_jabatan' => $request->jabatan,
-		'pegawai_umur' => $request->umur,
-		'pegawai_alamat' => $request->alamat
+		'pegawai_nama' => $request->Nama,
+		'pegawai_jabatan' => $request->Jabatan,
+		'pegawai_umur' => $request->Umur,
+		'pegawai_alamat' => $request->Alamat
 	]);
 	// alihkan halaman ke halaman pegawai
 	return redirect('/pegawai');
