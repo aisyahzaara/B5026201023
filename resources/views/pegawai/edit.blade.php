@@ -1,4 +1,5 @@
 @extends('layout.ceria')
+@section('title', 'Data Pegawai')
 
 <style>
     .form {
@@ -14,9 +15,7 @@
         line-height: 44px;
     }
     </style>
-@section('title', 'Data Pegawai')
 @section('isikonten')
-
 
 	<h2>Edit Pegawai</h2>
 

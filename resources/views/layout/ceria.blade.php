@@ -16,113 +16,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-    <title>@yield('title')</title>
-    <style>
-    *{
-	list-style: none;
-	text-decoration: none;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Open Sans', sans-serif;
-}
-body{
-	background: #f5f6fa;
-}
-.wrapper .sidebar{
-	background: rgb(5, 68, 104);
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 225px;
-	height: 100%;
-	padding: 20px 0;
-	transition: all 0.5s ease;
-    overflow: auto;
-}
-.wrapper .sidebar .profile{
-	margin-bottom: 30px;
-	text-align: center;
-}
-.wrapper .sidebar .profile img{
-	display: block;
-	width: 110px;
-	height: 110px;
-    border-radius: 50%;
-	margin: 0 auto;
-}
-.wrapper .sidebar .profile h3{
-	color: #ffffff;
-	margin: 10px 0 5px;
-    font-size: 23px
-}
-.wrapper .sidebar .profile p{
-	color: rgb(206, 240, 253);
-	font-size: 15px;
-}
-    .menu-head {
-    text-transform: uppercase;
-    color: #8da2fb;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    margin-left: 0.8rem;
-    }
-    .wrapper .sidebar ul li a{
-	display: block;
-	padding: 13px 30px;
-	border-bottom: 1px solid #10558d;
-	color: rgb(241, 237, 237);
-	font-size: 16px;
-	position: relative;
-}
-.wrapper .sidebar ul li a .icon{
-	color: #dee4ec;
-	width: 30px;
-	display: inline-block;
-}
-.wrapper .sidebar ul li a:hover,
-.wrapper .sidebar ul li a.active{
-	color: #0c7db1;
-	background:white;
-    border-right: 2px solid rgb(5, 68, 104);
-}
-.wrapper .sidebar ul li a:hover .icon,
-.wrapper .sidebar ul li a.active .icon{
-	color: #0c7db1;
-}
-.wrapper .sidebar ul li a:hover:before,
-.wrapper .sidebar ul li a.active:before{
-	display: block;
-}
-.wrapper .section{
-	width: calc(100% - 225px);
-	margin-left: 225px;
-	transition: all 0.5s ease;
-}
-.wrapper .section .top_navbar{
-	background: rgb(7, 105, 185);
-	height: 50px;
-	display: flex;
-	align-items: center;
-	padding: 0 30px;
-}
-.wrapper .section .top_navbar .hamburger a{
-	font-size: 28px;
-	color: #f4fbff;
-}
-.wrapper .section .top_navbar .hamburger a:hover{
-	color: #a2ecff;
-}
-body.active .wrapper .sidebar{
-	left: -225px;
-}
-body.active .wrapper .section{
-	margin-left: 0;
-	width: 100%;
-}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://themify.me/wp-content/themes/themify-v32/themify-icons/themify-icons.css" />
 
-    </style>
+    <link rel="stylesheet" href="/css/ceria.css">
+    <title>@yield('title')</title>
+
 </head>
 <body>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
@@ -213,7 +114,8 @@ body.active .wrapper .section{
                 </li>
             </ul>
        </div>
-       <div class="section">
+
+    <div class="section">
         <div class="top_navbar">
           <div class="hamburger">
             <a href="#">
@@ -221,13 +123,38 @@ body.active .wrapper .section{
             </a>
           </div>
         </div>
-        <div class="container m-4">
+    <div class="container m-4">
         @section('isikonten');
         @show;
-        </div>
-        </div>
     </div>
-  <script>
+
+
+      <!-- partial:index.partial.html -->
+      <footer class="new_footer_area bg_color" style="margin-top: 5rem; width:100%" >
+        <div class="new_footer_top">
+          <div class="container"></div>
+          <div class="footer_bg">
+            <div class="footer_bg_one"></div>
+            <div class="footer_bg_two"></div>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6 col-sm-7">
+                <p class="mb-0 f_400">© Hak Cipta oleh 5026201023 - Aisyah Zahrah.</p>
+              </div>
+              <div class="col-lg-6 col-sm-5 text-right">
+                <p>Made with <i class="icon_heart"></i> in <a href="#">CakeCounter</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- partial -->
+
+    </div>
+<script>
    var hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", function(){
         document.querySelector("body").classList.toggle("active");
