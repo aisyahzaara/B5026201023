@@ -31,12 +31,16 @@ Route::get('ets', 'ViewController@showEts');
 
 Route::match(['get','post'],'tugasphp', 'ViewController@showTugasPHP');
 
+
 Route::get('/pegawai','PegawaiController@index');
 Route::get('/pegawai/tambah','PegawaiController@tambah');
 Route::post('/pegawai/store','PegawaiController@store');
 Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
 Route::get('/pegawai/edit/{id}','PegawaiController@edit');
 Route::post('/pegawai/update','PegawaiController@update');
+Route::get('/pegawai/cari','PegawaiController@cari');
+Route::get('/pegawai/view/{id}','PegawaiController@detail');
+
 
 
 Route::get('/absen','AbsenController@index');
@@ -45,6 +49,17 @@ Route::post('/absen/store','AbsenController@store');
 Route::get('/absen/hapus/{id}','AbsenController@hapus');
 Route::get('/absen/edit/{id}','AbsenController@edit');
 Route::post('/absen/update','AbsenController@update');
+
+
+Route::get('/laptop','LaptopController@index');
+Route::get('/laptop/tambah','LaptopController@tambah');
+Route::post('/laptop/store','LaptopController@store');
+Route::get('/laptop/hapus/{id}','LaptopController@hapus');
+Route::get('/laptop/edit/{id}','LaptopController@edit');
+Route::post('/laptop/update','LaptopController@update');
+Route::get('/laptop/cari','LaptopController@cari');
+Route::get('/laptop/view/{id}','LaptopController@detail');
+
 
 
 

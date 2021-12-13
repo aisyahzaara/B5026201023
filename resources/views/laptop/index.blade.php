@@ -1,21 +1,21 @@
 @extends('layout.ceria')
-@section('title', 'Absen Pegawai')
+@section('title', ' Data Laptop')
 <style>
-    #absen {
+    #laptop {
       font-family: Arial, Helvetica, sans-serif;
       border-collapse: collapse;
       width: 80%;
       text-align: center;
     }
-    #absen td, #absen th {
+    #laptop td, #laptop th {
       border: 1px solid #ddd;
       padding: 8px;
     }
-    #absen tr:nth-child(even){background-color: #f2f2f2;}
+    #laptop tr:nth-child(even){background-color: #f2f2f2;}
 
-    #absen tr:hover {background-color: #ddd;}
+    #laptop tr:hover {background-color: #ddd;}
 
-    #absen th {
+    #laptop th {
       padding-top: 12px;
       padding-bottom: 12px;
       text-align: center;
@@ -40,58 +40,69 @@
     width: 300px;
     border: 15px solid rgb(72, 84, 192);
     padding: 10px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     }
     h4{
         text-align: center;
     }
-    .tambahAbsen{
+    .tambahLaptop{
     margin-top: 1rem;
     margin-bottom: 1rem;
     }
-    .tambahAbsen a{
+    .tambahLaptop a{
         color: rgb(0, 0, 0);
     }
     </style>
 @section('isikonten')
 
-	<h2>Absen Pegawai Sunny Optical Technology Group</h2>
+	<h2> PT Sunny Optical Technology Group</h2>
+
+    <div>
+        <form action="/laptop/cari" method="GET" style="width: 60%; margin-top: 1rem">
+            <input type="text" class="form-control" name="cari" placeholder="Cari Laptop . . ." value="{{ old('cari') }}">
+            <input type="submit" class="btn btn-primary" value="Cari" style="margin-top: 1rem">
+        </form>
+    </div>
+
     <div class="keterangan">
-    <h4>Keterengan absen</h4>
-    <p>H = Hadir<br>
-        T= Tidak Hadir<br>
+    <h4>Keterengan persediaan</h4>
+    <p>A = Ada<br>
+        T = Tidak Ada<br>
     </p>
     </div>
 
-    <div class="tambahAbsen">
+    <div class="tambahLaptop">
     <button type="button" class="btn btn-info">
-        <a href="/absen/tambah"> + Tambah Absen Baru</a>
+        <a href="/laptop/tambah"> + Tambah Laptop Baru</a>
     </button>
     </div>
 
-	<table id="absen" style="border: 1">
+	<table id="laptop" style="border: 1">
 		<tr>
-			<th>Nama pegawai</th>
-			<th>Tanggal</th>
-			<th>Status</th>
+			<th>Merk Laptop</th>
+            <th>Tersedia</th>
 			<th>Opsi</th>
 		</tr>
-		@foreach($absen as $p)
+		@foreach($laptop as $p)
 		<tr>
-			<td>{{ $p->pegawai_nama }}</td>
-			<td>{{ $p->Tanggal }}</td>
-			<td>{{ $p->Status }}</td>
+			<td>{{ $p->merklaptop }}</td>
+            <td>{{ $p->tersedia }}</td>
 			<td>
-				<a href="/absen/edit/{{ $p->ID }}">
+                <a href="/laptop/view/{{ $p->kodelaptop }}">
+                    <button type="button" class="btn btn-primary">View Detail</button>
+                </a>
+				<a href="/laptop/edit/{{ $p->kodelaptop }}">
                     <button type="button" class="btn btn-warning">Edit</button>
                 </a>
 
-				<a href="/absen/hapus/{{ $p->ID }}">
+				<a href="/laptop/hapus/{{ $p->kodelaptop }}">
                     <button type="button" class="btn btn-danger">Hapus</button>
                 </a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
-    {{ $absen->links() }}
+    <div style="margin-top: 2rem">
+        {{ $laptop->links() }}
+    </div>
 @endsection

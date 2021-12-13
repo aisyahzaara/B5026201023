@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
     <link rel="stylesheet" href="https://themify.me/wp-content/themes/themify-v32/themify-icons/themify-icons.css" />
 
@@ -34,86 +35,35 @@
                 <h3>Aisyah Zahrah</h3>
                 <p>5026201023</p>
             </div>
-            <div class="menu-head">
-                <span class="fas fa-tasks"></span>
-                <span>Tugas</span>
-            </div>
-            <ul>
+            <ul onclick="window.myFunction(event)">
                 <li>
-                    <a href="#" class="active">
-                        <span class="item">Tugas 1</span>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="item">Tugas 2</span>
+                    <a href="/pegawai">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Pegawai</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="item">Tugas 3</span>
+                    <a href="/absen">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="item">Absen</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="item">Tugas 4</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="item">Tugas PHP</span>
+                    <a href="/laptop">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Laptop</span>
                     </a>
                 </li>
             </ul>
-            <div class="menu-head">
-                <span class="fas fa-brain"></span>
-                <span>Praktikum</span>
-            </div>
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="item">Praktikum 1</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="item">Praktikum 2</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="menu-head">
-                <span class="fas fa-table"></span>
-                <span>Tabel</span>
-            </div>
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="item">Tabel Pegawai</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="item">Tabel Absen</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="menu-head">
-                <span class="fad fa-clipboard"></span>
-                <span>Ujian</span>
-            </div>
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="item">ETS</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="item">EAS</span>
-                    </a>
-                </li>
-            </ul>
-       </div>
+
+      </div>
+
 
     <div class="section">
         <div class="top_navbar">
@@ -125,12 +75,12 @@
         </div>
     <div class="container m-4">
         @section('isikonten');
-        @show;
+        @show
     </div>
 
 
       <!-- partial:index.partial.html -->
-      <footer class="new_footer_area bg_color" style="margin-top: 5rem; width:100%" >
+      <footer class="new_footer_area bg_color" style="margin-top: 4rem; width:100%" >
         <div class="new_footer_top">
           <div class="container"></div>
           <div class="footer_bg">
@@ -168,7 +118,17 @@
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
     }
+
+    window.myFunction = function(event) {
+  // reset all menu items
+  document.querySelectorAll('ul li a.active').forEach(function(item) {
+  item.classList.remove('active');
+})
+  // mark as active selected menu item
+  event.target.classList.add("active");
+};
   </script>
+
 </body>
 </html>
 

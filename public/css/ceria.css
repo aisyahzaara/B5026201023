@@ -18,7 +18,6 @@ body {
     height: 100%;
     padding: 20px 0;
     transition: all 0.5s ease;
-    overflow: auto;
 }
 .wrapper .sidebar .profile {
     margin-bottom: 30px;
@@ -46,11 +45,11 @@ body {
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
-    margin-left: 0.8rem;
+    margin-left: 0.1rem;
 }
 .wrapper .sidebar ul li a {
     display: block;
-    padding: 13px 30px;
+    padding: 13px;
     border-bottom: 1px solid #10558d;
     color: rgb(241, 237, 237);
     font-size: 16px;

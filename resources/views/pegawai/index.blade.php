@@ -40,6 +40,13 @@
 
 	<h2> Data Pegawai Sunny Optical Technology Group</h2>
 
+    <div>
+        <form action="/pegawai/cari" method="GET" style="width: 60%">
+            <input type="text" class="form-control" name="cari" placeholder="Cari Pegawai . . ." value="{{ old('cari') }}">
+            <input type="submit" class="btn btn-primary" value="Cari" style="margin-top: 1rem">
+        </form>
+    </div>
+
     <div class="tambahPegawai">
         <button type="button" class="btn btn-info">
             <a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
@@ -49,18 +56,25 @@
 	<table id="pegawai" style="border: 1">
 		<tr>
 			<th>Nama</th>
+            <?php /*
 			<th>Jabatan</th>
 			<th style="width: 70px"> Umur</th>
-			<th style="width: 280px"> Alamat</th>
+            */?>
+			<th> Alamat</th>
 			<th>Opsi</th>
 		</tr>
 		@foreach($pegawai as $p)
 		<tr>
 			<td>{{ $p->pegawai_nama }}</td>
+            <?php /*
 			<td>{{ $p->pegawai_jabatan }}</td>
 			<td>{{ $p->pegawai_umur }}</td>
+            */?>
 			<td>{{ $p->pegawai_alamat }}</td>
 			<td>
+                <a href="/pegawai/view/{{ $p->pegawai_id }}">
+                    <button type="button" class="btn btn-primary">View Detail</button>
+                </a>
 				<a href="/pegawai/edit/{{ $p->pegawai_id }}">
                     <button type="button" class="btn btn-warning">Edit</button>
                 </a>
@@ -71,5 +85,9 @@
 		</tr>
 		@endforeach
 	</table>
+
+    <div style="margin-top: 2rem">
+    {{ $pegawai->links() }}
+    </div>
 
     @endsection
