@@ -37,9 +37,9 @@
             </div>
             <ul onclick="window.myFunction(event)">
                 <li>
-                    <a href="#">
+                    <a href="/karyawan1">
                         <span class="icon"><i class="fas fa-home"></i></span>
-                        <span class="item">Home</span>
+                        <span class="item">Karyawan</span>
                     </a>
                 </li>
                 <li>
