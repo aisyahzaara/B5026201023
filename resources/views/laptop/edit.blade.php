@@ -44,7 +44,7 @@
                     <label>Tersedia</label>
                 </div>
                  <div class="col-md-8 form-group" style="margin-top: 1rem; margin-bottom:1rem">
-                <input type="radio" id="ada" name="Tersedia" value="H" @if ($p->tersedia === "A") checked="checked" @endif>
+                <input type="radio" id="ada" name="Tersedia" value="A" @if ($p->tersedia === "A") checked="checked" @endif>
                 <label for="hadir">Ada</label>
                 <input type="radio" id="tidak" name="Tersedia" value="T" @if ($p->tersedia === "T") checked="checked" @endif>
                 <label for="tidak">Tidak ada</label>
